@@ -55,6 +55,7 @@
     <Compile Include="DataFlow\User.cs" />
     <Compile Include="Size.cs" />
     <Compile Include="Topping.cs" />
+    <Compile Include="UserHelper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

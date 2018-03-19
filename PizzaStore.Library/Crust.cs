@@ -8,9 +8,16 @@ namespace PizzaStore.Library
 {
     public class Crust
     {
-        bool Thin;
-        bool Thick;
-        bool ExtraThick;
+        public bool Thin;
+        public bool Thick;
+        public bool ExtraThick;
+
+        public Crust(bool tn, bool tc, bool ex)
+        {
+            Thin = tn;
+            Thick = tc;
+            ExtraThick = ex;
+        }
 
         public double GetCrustCost()
         {

@@ -16,6 +16,17 @@ namespace PizzaStore.Library
         bool ExtraCheese { get; set; }
         bool CheeseX4 { get; set; }
 
+        public Topping(bool p, bool sa, bool bb, bool sp, bool rb, bool ec, bool x4)
+        {
+            Pepperoni = p;
+            Sausage = sa;
+            BaconBits = bb;
+            Spinach = sp;
+            RealBacon = rb;
+            ExtraCheese = ec;
+            CheeseX4 = x4;
+        }
+
         public int GetToppingCount()
         {
             int toppingCount = 0;

@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace PizzaStore.Library
 {
-    class Location
+    public class Location
     {
-        string City;
-        string State;
-        string Zip;
-        string Street;
+        public string City;
+        public string State;
+        public string Zip;
+        public string Street;
+
+        public Location()
+        {
+
+        }
     }
 }

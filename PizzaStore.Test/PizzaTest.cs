@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PizzaStore.Library;
-using PizzaStore.Library.Enums;
 
-namespace PizzaStore.Client
+namespace PizzaStore.Test
 {
-    class Program
+    [TestClass]
+    public class PizzaTest
     {
-        static void Main(string[] args)
+        [TestMethod]
+        public void MakeAPizza1()
         {
             Size size = new Size(true, false, false, false, false);
             Crust crust = new Crust(false, false, true);
@@ -18,9 +16,7 @@ namespace PizzaStore.Client
             Order order = new Order();
             UserHelper userHelper = new UserHelper();
             order.addPizza(topping, size, crust);
-
-            Console.WriteLine(order.pizzas[0].Crust.Thin.ToString());
-            Console.ReadKey();
+            Assert.IsNotNull(order.pizzas);
         }
     }
 }
