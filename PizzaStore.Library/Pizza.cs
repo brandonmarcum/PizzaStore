@@ -9,12 +9,15 @@ namespace PizzaStore.Library
 {
     public class Pizza
     {
-        public Dictionary<int, ToppingEnum> Toppings {get; set;}
-        public Dictionary<int, PizzaSizeEnum>();
+        public Topping Topping { get; set; }
+        public Size Size { get; set; }
+        public Crust Crust { get; set; }
 
-        public void Add(ToppingEnum topping)
+        public Pizza(Topping topping, Size size, Crust crust)
         {
-            Toppings.Add(1, topping);
+            Topping = topping;
+            Size = size;
+            Crust = crust;
         }
     }
 }
