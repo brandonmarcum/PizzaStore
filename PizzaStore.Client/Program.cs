@@ -12,14 +12,27 @@ namespace PizzaStore.Client
     {
         static void Main(string[] args)
         {
-            Size size = new Size(true, false, false, false, false);
-            Crust crust = new Crust(false, false, true);
-            Topping topping = new Topping(true, true, true, false, false, false, true);
+            Size size = new Size(false, true, false, false, false);
+            Crust crust = new Crust(false, true, false);
+            Topping topping = new Topping(true, true, true, false, true, false, true);
             Order order = new Order();
             UserHelper userHelper = new UserHelper();
             order.addPizza(topping, size, crust);
 
-            Console.WriteLine(order.pizzas[0].Crust.Thin.ToString());
+            for (int i = 0; i < 13; i++)
+            {
+                size = new Size(false, true, false, false, false);
+                crust = new Crust(false, true, false);
+                topping = new Topping(true, true, true, false, true, false, true);
+                order.addPizza(topping, size, crust);
+            }
+
+            userHelper.AddOrder(order);
+            
+
+
+            Console.WriteLine(userHelper.GetOrder()[0].pizzas[0].Crust.Thick.ToString());
+            Console.WriteLine(userHelper.GetSumOfAllOrders().ToString());
             Console.ReadKey();
         }
     }

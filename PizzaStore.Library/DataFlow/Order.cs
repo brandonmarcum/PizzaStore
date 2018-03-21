@@ -14,26 +14,26 @@ namespace PizzaStore.Library
         public Order()
         {
             pizzas = new Dictionary<int, Pizza>();
-            TotalCost = CalculateTotalCost();
         }
 
         public void addPizza(Topping topping, Size size, Crust crust)
         {
-            pizzas.Add(pizzas.Count, new Pizza(topping, size, crust));
+            if (pizzas.Count < 12)
+                pizzas.Add(pizzas.Count, new Pizza(topping, size, crust));
         }
 
-        public double CalculateTotalCost()
+        public double CalculateTotalCost(int p)
         {
             double total = 0;
 
-            //Size size = new Size();
-            //total = size.GetSizeCost();
+            Size size = pizzas[p].Size;
+            total += size.GetSizeCost();
 
-            //Topping topping = new Topping();
-            //total += 1 * topping.GetToppingCount();
+            Topping topping = pizzas[p].Topping;
+            total += 1 * topping.GetToppingCount();
 
-            //Crust crust = new Crust();
-            //total = crust.GetCrustCost();
+            Crust crust = pizzas[p].Crust;
+            total += crust.GetCrustCost();
 
             return total;
         }

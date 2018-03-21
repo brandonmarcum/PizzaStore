@@ -21,10 +21,7 @@ namespace PizzaStore.Library
             Email = e;
             Phone = p;
             Rewards = r;
-            City = c;
-            State = sta;
-            Street = str;
-            Zip = z;
+            AddLocation(c, sta, z, str);
         }
     }
 }
