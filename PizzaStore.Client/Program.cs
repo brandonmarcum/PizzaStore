@@ -12,26 +12,41 @@ namespace PizzaStore.Client
     {
         static void Main(string[] args)
         {
-            Size size = new Size(false, true, false, false, false);
-            Crust crust = new Crust(false, true, false);
-            Topping topping = new Topping(true, true, true, false, true, false, true);
+            //Start
+            //Profile
+            Profile profile = new Profile();
+            //User
+            //Location
+
+            //Menu
+            Size size = new Size();
+            Crust crust = new Crust();
+            Topping topping = new Topping();
+
+            size.SmallPizza = false;
+            size.LargePizza = true; //9.15
+            crust.Thin = false;
+            crust.ExtraThick = true; //1.05
+            topping.CheeseX4 = true; //1
+            topping.BaconBits = true; //1
+            topping.RealBacon = true; //1
+
+            //Order
             Order order = new Order();
-            UserHelper userHelper = new UserHelper();
             order.addPizza(topping, size, crust);
 
-            for (int i = 0; i < 13; i++)
-            {
-                size = new Size(false, true, false, false, false);
-                crust = new Crust(false, true, false);
-                topping = new Topping(true, true, true, false, true, false, true);
-                order.addPizza(topping, size, crust);
-            }
-
+            //Cart
+            UserHelper userHelper = new UserHelper();
             userHelper.AddOrder(order);
-            
 
 
-            Console.WriteLine(userHelper.GetOrder()[0].pizzas[0].Crust.Thick.ToString());
+            //Receipt
+
+
+
+
+
+            Console.WriteLine(userHelper.GetOrders()[0].pizzas[0].Crust.Thick.ToString());
             Console.WriteLine(userHelper.GetSumOfAllOrders().ToString());
             Console.ReadKey();
         }

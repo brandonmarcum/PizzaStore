@@ -14,9 +14,9 @@ namespace PizzaStore.Library
         public void AddOrder(Order order)
         {
             if (_orders.Count < 3)
-                _orders.Add(_orders.Count, order);
+                _orders.Add(GetOrders().Count, order);
         }
-        public Dictionary<int,Order> GetOrder()
+        public Dictionary<int,Order> GetOrders()
         {
             return _orders;
         }
@@ -28,15 +28,16 @@ namespace PizzaStore.Library
         public double GetSumOfAllOrders()
         {
             double grandTotal = 0;
-            Order order = new Order();
-            for(int i = 0; i < _orders.Count; i++)
+            for (int i = 0; i < GetOrders().Count; i++)
             {
-                grandTotal = order.CalculateTotalCost(i);
+                grandTotal = _orders[i].CalculateTotalCost(i);
             }
 
             if (grandTotal >= 500 || grandTotal < 0)
                 throw new OverflowException("Cash value is out of range");
 
+
+            Console.WriteLine(grandTotal);
             return grandTotal;
         }
 

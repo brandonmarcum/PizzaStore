@@ -8,7 +8,6 @@ namespace PizzaStore.Client
 {
     class Inventory
     {
-        double Dough;
-        double Sauce;
+        
     }
 }

@@ -14,7 +14,16 @@ namespace PizzaStore.Library
         public bool MediumPizza { get; set; }
         public bool LargePizza { get; set; }
         public bool VeganPizza { get; set; }
-        
+
+        public Size()
+        {
+            KidsPizza = false;
+            SmallPizza = false;
+            MediumPizza = false;
+            LargePizza = false;
+            VeganPizza = false;
+        }
+
         public Size(bool k, bool s, bool m, bool l, bool v)
         {
             KidsPizza = k;

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PizzaStore.Library
 {
-    public class Profile
+    class Inventory
     {
-        bool User { get; set; }
-        bool Delivery { get; set; }
+        double Dough;
+        double Sauce;
     }
 }

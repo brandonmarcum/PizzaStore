@@ -127,7 +127,7 @@ namespace PizzaStore.Test
 
             Assert.IsFalse(order.pizzas.Count == 13);
             Assert.IsTrue(order.pizzas.Count == 12);
-            Assert.IsTrue(userHelper.GetOrder().Count == 1);
+            Assert.IsTrue(userHelper.GetOrders().Count == 1);
         }
 
         [TestMethod]
@@ -156,7 +156,7 @@ namespace PizzaStore.Test
 
             Assert.IsFalse(order.pizzas.Count == 13);
             Assert.IsTrue(order.pizzas.Count == 12);
-            Assert.IsTrue(userHelper.GetOrder().Count == 2);
+            Assert.IsTrue(userHelper.GetOrders().Count == 2);
         }
 
         [TestMethod]
@@ -182,14 +182,49 @@ namespace PizzaStore.Test
                 userHelper.AddOrder(order);
             }
 
-
             Assert.IsFalse(order.pizzas.Count == 13);
             Assert.IsTrue(order.pizzas.Count == 12);
-            Assert.IsFalse(userHelper.GetOrder().Count == 4);
-            Assert.IsTrue(userHelper.GetOrder().Count == 3);
+            Assert.IsFalse(userHelper.GetOrders().Count == 4);
+            Assert.IsTrue(userHelper.GetOrders().Count == 3);
         }
 
+        [TestMethod]
+        public void T9SimulateMakingAnOrder()
+        {
+            //Start
+            //Profile
+            Profile profile = new Profile();
+            //User
+            //Location
 
+            //Menu
+            Size size = new Size();
+            Crust crust = new Crust();
+            Topping topping = new Topping();
+
+            size.KidsPizza = false;
+            size.LargePizza = true; //9.15
+            crust.Thin = false;
+            crust.ExtraThick = true; //1.05
+            topping.CheeseX4 = true; //1
+            topping.BaconBits = true; //1
+            topping.RealBacon = true; //1
+
+            //Order
+            Order order = new Order();
+            order.addPizza(topping, size, crust);
+
+            //Cart
+            UserHelper userHelper = new UserHelper();
+            userHelper.AddOrder(order);
+
+
+            //Receipt
+            userHelper.GetSumOfAllOrders();
+
+            Console.WriteLine(userHelper.GetSumOfAllOrders());
+            Assert.IsTrue(userHelper.GetSumOfAllOrders() == 13.2);
+        }
 
     }
 }

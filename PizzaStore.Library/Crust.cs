@@ -12,6 +12,13 @@ namespace PizzaStore.Library
         public bool Thick;
         public bool ExtraThick;
 
+        public Crust()
+        {
+            Thin = true;
+            Thick = false;
+            ExtraThick = false;
+        }
+
         public Crust(bool tn, bool tc, bool ex)
         {
             Thin = tn;

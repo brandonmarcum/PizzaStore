@@ -9,12 +9,7 @@ namespace PizzaStore.Library
     public class Order
     {
         public double TotalCost {get; set;}
-        public Dictionary<int, Pizza> pizzas;
-        
-        public Order()
-        {
-            pizzas = new Dictionary<int, Pizza>();
-        }
+        public Dictionary<int, Pizza> pizzas = new Dictionary<int, Pizza>();
 
         public void addPizza(Topping topping, Size size, Crust crust)
         {
@@ -33,11 +28,11 @@ namespace PizzaStore.Library
             total += 1 * topping.GetToppingCount();
 
             Crust crust = pizzas[p].Crust;
-            total += crust.GetCrustCost();
+            total += crust.GetCrustCost(); //1.05
 
             return total;
         }
-
+        
         
     }
 }

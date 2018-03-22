@@ -8,13 +8,24 @@ namespace PizzaStore.Library
 {
     public class Topping
     {
-        bool Pepperoni { get; set; }
-        bool Sausage { get; set; }
-        bool BaconBits { get; set; }
-        bool Spinach { get; set; }
-        bool RealBacon { get; set; }
-        bool ExtraCheese { get; set; }
-        bool CheeseX4 { get; set; }
+        public bool Pepperoni { get; set; }
+        public bool Sausage { get; set; }
+        public bool BaconBits { get; set; }
+        public bool Spinach { get; set; }
+        public bool RealBacon { get; set; }
+        public bool ExtraCheese { get; set; }
+        public bool CheeseX4 { get; set; }
+
+        public Topping()
+        {
+            Pepperoni = false;
+            Sausage = false;
+            BaconBits = false;
+            Spinach = false;
+            RealBacon = false;
+            ExtraCheese = false;
+            CheeseX4 = false;
+        }
 
         public Topping(bool p, bool sa, bool bb, bool sp, bool rb, bool ec, bool x4)
         {

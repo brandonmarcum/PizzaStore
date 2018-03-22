@@ -48,6 +48,7 @@
     <Compile Include="DataFlow\Location.cs" />
     <Compile Include="DataFlow\Menu.cs" />
     <Compile Include="DataFlow\Order.cs" />
+    <Compile Include="Inventory.cs" />
     <Compile Include="Pizza.cs" />
     <Compile Include="DataFlow\Profile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
