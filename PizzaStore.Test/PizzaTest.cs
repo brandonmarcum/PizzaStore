@@ -8,7 +8,7 @@ namespace PizzaStore.Test
     public class PizzaTest
     {
         [TestMethod]
-        public void T1MakeAPizza1()
+        public void P1MakeAPizza()
         {
             Size size = new Size(true, false, false, false, false);
             Crust crust = new Crust(false, false, true);
@@ -20,7 +20,7 @@ namespace PizzaStore.Test
         }
 
         [TestMethod]
-        public void T2MakeTwoPizzas1()
+        public void P2MakeTwoPizzas()
         {
             Size size = new Size(false, true, false, false, false);
             Crust crust = new Crust(false, true, false);
@@ -39,7 +39,7 @@ namespace PizzaStore.Test
         }
 
         [TestMethod]
-        public void T3MakeThreePizzas1()
+        public void P3MakeThreePizzas()
         {
             Size size = new Size(false, true, false, false, false);
             Crust crust = new Crust(false, true, false);
@@ -63,7 +63,7 @@ namespace PizzaStore.Test
         }
 
         [TestMethod]
-        public void T4MakeTwelvePizzas1()
+        public void P4MakeTwelvePizzas()
         {
             Size size = new Size(false, true, false, false, false);
             Crust crust = new Crust(false, true, false);
@@ -84,7 +84,7 @@ namespace PizzaStore.Test
         }
 
         [TestMethod]
-        public void T5MakeThirteenPizzas1()
+        public void P5MakeThirteenPizzas()
         {
             Size size = new Size(false, true, false, false, false);
             Crust crust = new Crust(false, true, false);
@@ -106,131 +106,26 @@ namespace PizzaStore.Test
         }
 
         [TestMethod]
-        public void T6MakeAnOrder()
+        public void P6UpdatePizza()
         {
             Size size = new Size(false, true, false, false, false);
             Crust crust = new Crust(false, true, false);
             Topping topping = new Topping(true, true, true, false, true, false, true);
             Order order = new Order();
-            Cart cart = new Cart();
-            order.addPizza(topping, size, crust);
-
-            for (int i = 0; i < 13; i++)
-            {
-                size = new Size(false, true, false, false, false);
-                crust = new Crust(false, true, false);
-                topping = new Topping(true, true, true, false, true, false, true);
-                order.addPizza(topping, size, crust);
-            }
-
-            cart.AddOrder(order);
-
-            Assert.IsFalse(order.pizzas.Count == 13);
-            Assert.IsTrue(order.pizzas.Count == 12);
-            Assert.IsTrue(cart.GetOrders().Count == 1);
-        }
-
-        [TestMethod]
-        public void T7MakeTwoOrders()
-        {
-            Size size = new Size(false, true, false, false, false);
-            Crust crust = new Crust(false, true, false);
-            Topping topping = new Topping(true, true, true, false, true, false, true);
-            Order order = new Order();
-            Cart cart = new Cart();
-            order.addPizza(topping, size, crust);
-
-            for (int q = 0; q < 2; q++)
-            {
-                for (int i = 0; i < 13; i++)
-                {
-                    size = new Size(false, true, false, false, false);
-                    crust = new Crust(false, true, false);
-                    topping = new Topping(true, true, true, false, true, false, true);
-                    order.addPizza(topping, size, crust);
-                }
-
-                cart.AddOrder(order);
-            }
-           
-
-            Assert.IsFalse(order.pizzas.Count == 13);
-            Assert.IsTrue(order.pizzas.Count == 12);
-            Assert.IsTrue(cart.GetOrders().Count == 2);
-        }
-
-        [TestMethod]
-        public void T8MakeFourOrders()
-        {
-            Size size = new Size(false, true, false, false, false);
-            Crust crust = new Crust(false, true, false);
-            Topping topping = new Topping(true, true, true, false, true, false, true);
-            Order order = new Order();
-            Cart cart = new Cart();
-            order.addPizza(topping, size, crust);
-
-            for (int q = 0; q < 4; q++)
-            {
-                for (int i = 0; i < 13; i++)
-                {
-                    size = new Size(false, true, false, false, false);
-                    crust = new Crust(false, true, false);
-                    topping = new Topping(true, true, true, false, true, false, true);
-                    order.addPizza(topping, size, crust);
-                }
-
-                cart.AddOrder(order);
-            }
-
-            Assert.IsFalse(order.pizzas.Count == 13);
-            Assert.IsTrue(order.pizzas.Count == 12);
-            Assert.IsFalse(cart.GetOrders().Count == 4);
-            Assert.IsTrue(cart.GetOrders().Count == 3);
-        }
-
-        [TestMethod]
-        public void T9SimulateMakingAnOrder()
-        {
-            //Start
-            //Profile
-            Profile profile = new Profile();
-            //User
             UserHelper userHelper = new UserHelper();
-            User user = new User("John", "Smith", "js@gmail.com", "200-555-5555", true,
-                "FL", "76 Skip Street", "Orlando", "57862");
-            userHelper.AddUser(user);
-
-            //Location
-            Site site = new Site("Main Branch", "GA", "800 Street Street", "Hemp", "80512");
-
-
-            //Menu
-            Size size = new Size();
-            Crust crust = new Crust();
-            Topping topping = new Topping();
-
-            size.KidsPizza = false;
-            size.LargePizza = true; //9.15
-            crust.Thin = false;
-            crust.ExtraThick = true; //1.05
-            topping.CheeseX4 = true; //1
-            topping.BaconBits = true; //1
-            topping.RealBacon = true; //1
-
-            //Order
-            Order order = new Order();
             order.addPizza(topping, size, crust);
 
-            //Cart
-            Cart cart = new Cart();
-            cart.AddOrder(order);
+            size.KidsPizza = true;
+            size.SmallPizza = false;
+            crust.Thin = true;
+            crust.Thick = false;
+            order.updatePizza(0, topping, size, crust);
 
 
-            //Receipt
-            cart.GetSumOfAllOrders();
-
-            Console.WriteLine(cart.GetSumOfAllOrders());
-            Assert.IsTrue(cart.GetSumOfAllOrders().ToString() == 13.2.ToString());
+            Assert.IsTrue(order.pizzas[0].Size.KidsPizza = true);
+            Assert.IsFalse(order.pizzas[0].Size.SmallPizza = true);
+            Assert.IsTrue(order.pizzas[0].Crust.Thin = true);
+            Assert.IsFalse(order.pizzas[0].Crust.Thick = true);
         }
 
     }

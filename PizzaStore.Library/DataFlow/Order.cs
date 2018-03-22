@@ -19,14 +19,13 @@ namespace PizzaStore.Library
 
         public void updatePizza(int index, Topping topping, Size size, Crust crust)
         {
-            Pizza pizza = new Pizza(topping, size, crust);
-            pizzas[index] = pizza;
+            pizzas[index] = new Pizza(topping, size, crust);
         }
 
         public void removePizza(int index)
         {
             pizzas.Remove(index);
-            for (int i = index; i < pizzas.Count; i++)
+            for (int i = index; i < pizzas.Count - 1; i++)
             {
                 pizzas[i] = pizzas[i + 1];
             }

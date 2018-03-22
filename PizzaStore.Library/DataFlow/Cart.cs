@@ -24,7 +24,7 @@ namespace PizzaStore.Library
         public void DeleteOrder(int index)
         {
             _orders.Remove(index);
-            for (int i = index; i < _orders.Count; i++)
+            for (int i = index; i < _orders.Count - 1; i++)
             {
                 _orders[i] = _orders[i + 1];
             }

@@ -8,6 +8,19 @@ namespace PizzaStore.Library
 {
     class Menu
     {
-        
+        public void ShowToppings()
+        {
+
+        }
+
+        public void ShowCrust()
+        {
+
+        }
+
+        public void ShowSize()
+        {
+
+        }
     }
 }
