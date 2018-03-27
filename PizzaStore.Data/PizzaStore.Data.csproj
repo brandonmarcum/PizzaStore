@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8A780EE5-DB6D-4F8F-91AA-7C7382596684}</ProjectGuid>
+    <ProjectGuid>{69D4F039-AAB9-439E-B5E5-C2E4DCFA5B7E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PizzaStore.Data</RootNamespace>
@@ -30,7 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Accessibility" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -109,10 +108,7 @@
     </Reference>
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Services.Design" />
     <Reference Include="System.Data.SqlClient, Version=4.2.0.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SqlClient.4.4.3\lib\net461\System.Data.SqlClient.dll</HintPath>
     </Reference>
@@ -137,11 +133,12 @@
   <ItemGroup>
     <Compile Include="Crust.cs" />
     <Compile Include="EFData.cs" />
+    <Compile Include="Employee.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="Pizza.cs" />
     <Compile Include="PizzaContext.cs" />
-    <Compile Include="PizzaStoreDB.cs" />
+    <Compile Include="PizzaDB.cs" />
     <Compile Include="PizzaTopping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Size.cs" />
@@ -151,12 +148,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PizzaStore.Library\PizzaStore.Library.csproj">
-      <Project>{da20ea5e-c238-49ff-a665-37e23bbb6089}</Project>
-      <Name>PizzaStore.Library</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

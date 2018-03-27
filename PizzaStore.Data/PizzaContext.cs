@@ -12,7 +12,6 @@ namespace PizzaStore.Data
 
         public PizzaContext()
         {
-
             Configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
         }
 

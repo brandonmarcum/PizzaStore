@@ -5,10 +5,9 @@ namespace PizzaStore.Data
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-    using Microsoft.EntityFrameworkCore;
 
     [Table("Crust")]
-    public partial class Crust: DbContext
+    public partial class Crust
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Crust()
