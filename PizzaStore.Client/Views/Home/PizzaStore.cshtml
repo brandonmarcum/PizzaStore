@@ -1,0 +1,301 @@
+﻿
+@{
+    ViewData["Title"] = "PizzaStore";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Makes the page Unicode compliant, Use UTF-16 if you want to use Japanese -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- What is the capability of your Screen?-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!-- Use the latest IE you possibly can -->
+    <meta name="author" content="brandon marcum"> <!-- Who wrote the context of the page -->
+    <meta name="keywords" content="dotnet, html, css, js"> <!-- Manipulates SEO somewhat -->
+    <meta name="description" content="hello html">
+
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+            $(document).ready(function () {
+
+            $('#navigation').fadeIn(500);
+            $('#ad-section').fadeIn(1700);
+            $('#featuredpizzas').fadeIn(2600);
+            $('#order').fadeIn(3200);
+            $('#register').fadeIn(3500);
+            });
+    </script>
+    <title>90s Pizza Shack</title>
+</head>
+<body class="container">
+
+    <header>
+        <hgroup class="row" id="title">
+            <h1 id="title"><img src="Images/PizzaStoreLogo.png" alt="Cheese Pizza" style="width:100%;"></h1>
+        </hgroup>
+    </header>
+    <nav id="navigation" style="display:none;" class="smooth-scroll row jumbotron">
+        <div class="col-md-6">
+            <h1 id="title"><a href="#featuredpizzas"><img src="Images/FeaturedPizzas.png" alt="Featured Pizzas" style="width:100%;"></a></h1>
+        </div>
+        <div class="col-md-6">
+            <h1 id="title"><a href="#order"><img src="Images/Order.png" alt="Order" style="width:100%;"></a></h1>
+        </div>
+    </nav>
+    <article class="row jumbotron" id="ad-section" style="display:none;">
+        <h1>Place your ad here!</h1>
+    </article>
+    <header class="row jumbotron" id="featuredpizzas" style="display:none;">
+        <hgroup class="col-md-3">
+            <h2>Make your friends say UGH with pizza from your home skillet!</h2>
+            <p>
+                Yada, yada, yada, alrighty then, our krunk pizza is made from the hella cool kitchen of our shack, dude. This pizza ain't
+                out of whack, we cook your pizza and give it to you in 30 minutes or less, before you have to dip. Our pizza will make you call
+                for dibs! Not the ice cream, the pizza.
+            </p>
+        </hgroup>
+        <hgroup class="col-md-9">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="Images/CheesePizza.jpg" alt="Cheese Pizza" style="width:100%;">
+                        <div class="carousel-caption">
+                            <h3>Cheese Pizza</h3>
+                            <p>A Relic of the 90s. So simple, yet loved by billions</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img src="Images/PepperoniPizza.jpg" alt="Pepperoni Pizza" style="width:100%;">
+                        <div class="carousel-caption">
+                            <h3>Pepperoni Pizza</h3>
+                            <p>Pepperoni, the way to give pizza respect. You don't know what's in pepperoni, but it's all good.</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img src="Images/RealBacon.jpg" alt="Pepperoni Pizza" style="width:100%;">
+                        <div class="carousel-caption">
+                            <h3>Try Our: Real Bacon</h3>
+                            <p>Oh snap, you must be thinking we be trippin' by puttting real bacon on pizza, you're wrong, totally sober.</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img src="Images/4XCheesePizza.png" alt="4X Cheese Pizza" style="width:100%;">
+                        <div class="carousel-caption">
+                            <h3>4X Cheese Pizza</h3>
+                            <p>We give cheese some props, so lets take your cheese and multiply it by four.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </hgroup>
+    </header>
+    <main>
+        <section class="row jumbotron" id="order" style="display:none;">
+            <header>
+                <h2><strong>Order</strong></h2>
+                <h3>Pizza</h3>
+            </header>
+
+            <div class="col-md-12">
+                <form action="" method="POST">
+
+
+                    <div class="col-md-4">
+                        <h4>Shack Location</h4>
+                        <select name="location">
+                            <option value="greenville">Greenville, FL</option>
+                            <option value="washington">Washington, FL</option>
+                            <option value="franklin">Franklin, GA</option>
+                            <option value="springfield">Springfield, TN</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h4>Size</h4>
+                        <select name="size">
+                            <option value="kids">Kids ($7.50)</option>
+                            <option value="small">Small ($8.25)</option>
+                            <option value="medium">Medium ($8.80)</option>
+                            <option value="large">Large ($9.15)</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h4>Crust</h4>
+                        <select name="crust">
+                            <option value="thin">Thin (Free)</option>
+                            <option value="thick">Thick ($0.75)</option>
+                            <option value="extrathick">Extra Thick ($1.05)</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h4>Sauce</h4>
+                        <select name="sauce">
+                            <option value="tomato">Tomato</option>
+                            <option value="nosauce">No Sauce</option>
+                            <option value="bbq">Barbecue</option>
+                            <option value="greentomato">Green Tomato</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h4>First Cheese</h4>
+                        <select name="firstcheese">
+                            <option value="provolone">Provolone</option>
+                            <option value="cheddar">Cheddar</option>
+                            <option value="mozzarella">Barbecue</option>
+                            <option value="purplecheese">Purple Cheese</option>
+                            <option value="none">None</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h4>Second Cheese</h4>
+                        <select name="secondcheese">
+                            <option value="none">None</option>
+                            <option value="provolone">Provolone</option>
+                            <option value="cheddar">Cheddar</option>
+                            <option value="mozzarella">Barbecue</option>
+                            <option value="purplecheese">Purple Cheese</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-12" id="form-toppings">
+                        <h4>Toppings ($1.00 each and up to 3)</h4> <!-- Comes back as list -->
+                        <label for="topping1">Pepperoni</label>
+                        <input type="checkbox" name="pizzatoppings" id="topping1" value="Pepperoni">
+                        <label for="topping2">Sausage</label>
+                        <input type="checkbox" name="pizzatoppings" id="topping2" value="Sausage">
+                        <label for="topping3">Bacon Bits</label>
+                        <input type="checkbox" name="pizzatoppings" id="topping3" value="BaconBits">
+                        <label for="topping4">Spinach</label>
+                        <input type="checkbox" name="pizzatoppings" id="topping4" value="Spinach">
+                        <label for="topping5">Real Bacon</label>
+                        <input type="checkbox" name="pizzatoppings" id="topping5" value="RealBacon">
+                        <label for="topping5">Extra Cheese</label>
+                        <input type="checkbox" name="pizzatoppings" id="topping5" value="ExtraCheese">
+                        <label for="topping5">4X Cheese</label>
+                        <input type="checkbox" name="pizzatoppings" id="topping5" value="CheeseX4">
+                        <!--(label+input)*5-->
+                        <!--hold alt and click for many lines -->
+                    </div>
+
+
+
+                    <div class="col-md-12">
+                        <button type="submit"><i class="fas fa-plus"></i> Add Pizza!</button>
+                    </div>
+                    <div class="col-md-12">
+                        <h4>Select an Account</h4>
+                        <select name="location">
+                            <option value="account1">James Smith</option>
+                            <option value="account2">John Johnson</option>
+                            <option value="account3">Robert Williams</option>
+                            <option value="account4">Micheal Jones</option>
+                        </select>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit"><i class="fas fa-truck"></i> Deliver!</button>
+                    </div>
+
+
+                </form>
+            </div>
+        </section>
+
+
+        <section class="row jumbotron" id="register" style="display:none;">
+            <header>
+                <h2><strong>Register an Account</strong></h2>
+            </header>
+
+            <div class="col-md-12">
+                <form action="" method="POST">
+                    <header class="row">
+                        <h3>Your Address</h3>
+                    </header>
+
+                    <div class="col-md-6">
+                        <h4 for="firstname">First Name</h4>
+                        <input type="text" name="firstname" id="firstname">
+                    </div>
+
+                    <div class="col-md-6">
+                        <h4 for="lastname">Last Name</h4>
+                        <input type="text" name="lastname" id="lastname">
+                    </div>
+
+                    <div class="col-md-6">
+                        <h4 for="address1">Address Line 1</h4>
+                        <input type="text" name="address1" id="address1">
+                    </div>
+
+                    <div class="col-md-6">
+                        <h4 for="address2">Address Line 2</h4>
+                        <input type="text" name="address2" id="address2">
+                    </div>
+
+                    <div class="col-md-4">
+                        <h4 for="city">City</h4>
+                        <input type="text" name="city" id="city">
+                    </div>
+
+                    <div class="col-md-4">
+                        <h4 for="state">State</h4>
+                        <input type="text" name="state" id="state">
+                    </div>
+
+                    <div class="col-md-4">
+                        <h4 for="zipcode">Zip Code</h4>
+                        <input type="text" name="zipcode" id="zipcode">
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit"><i class="fas fa-address-book"></i> Register!</button>
+                    </div>
+                </form>
+            </div>
+
+        </section>
+    </main>
+    <aside></aside>
+    <footer class="row jumbotron">
+        <hr>
+
+        <p>
+            <small>
+                Copyright &copy; 2018
+                <i class="em em-b"></i>randon Marcum
+        </p>
+        <p>If you take our ideas, we will take your toilet paper, dude.</small></p>
+    </footer>
+
+</body>
+</html>
+
