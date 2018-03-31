@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PizzaStore.Library;
 using PizzaStore.Library.Enums;
+using PizzaStore.Data;
 
 namespace PizzaStore.Client
 {
@@ -12,6 +13,14 @@ namespace PizzaStore.Client
     {
         static void Main(string[] args)
         {
+            EFData ed = new EFData();
+
+            foreach (var item in ed.Read())
+            {
+                Console.WriteLine(item.Name);
+            }
+
+            Console.ReadKey();
         }
     }
 }

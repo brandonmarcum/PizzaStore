@@ -28,6 +28,7 @@ namespace PizzaStore.Library
 
         public double GetCrustCost()
         {
+
             if (Thin)
                 return 0.00;
             else if (Thick)

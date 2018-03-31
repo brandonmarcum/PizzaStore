@@ -5,10 +5,11 @@ namespace PizzaStore.Data
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class PizzaDB : DbContext
+
+    public partial class PizzaStoreDB : DbContext
     {
-        public PizzaDB()
-            : base("name=PizzaDB")
+        public PizzaStoreDB()
+            : base("name=PizzaStoreDB")
         {
         }
 
