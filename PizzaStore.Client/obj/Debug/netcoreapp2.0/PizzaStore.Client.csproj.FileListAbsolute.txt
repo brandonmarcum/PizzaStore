@@ -1,0 +1,11 @@
+C:\Users\Bmarc\source\repos\PizzaStore3\PizzaStore.Client\bin\Debug\netcoreapp2.0\PizzaStore.Client.deps.json
+C:\Users\Bmarc\source\repos\PizzaStore3\PizzaStore.Client\bin\Debug\netcoreapp2.0\PizzaStore.Client.runtimeconfig.json
+C:\Users\Bmarc\source\repos\PizzaStore3\PizzaStore.Client\bin\Debug\netcoreapp2.0\PizzaStore.Client.runtimeconfig.dev.json
+C:\Users\Bmarc\source\repos\PizzaStore3\PizzaStore.Client\bin\Debug\netcoreapp2.0\PizzaStore.Client.dll
+C:\Users\Bmarc\source\repos\PizzaStore3\PizzaStore.Client\bin\Debug\netcoreapp2.0\PizzaStore.Client.pdb
+C:\Users\Bmarc\source\repos\PizzaStore3\PizzaStore.Client\obj\Debug\netcoreapp2.0\PizzaStore.Client.csprojResolveAssemblyReference.cache
+C:\Users\Bmarc\source\repos\PizzaStore3\PizzaStore.Client\obj\Debug\netcoreapp2.0\PizzaStore.Client.csproj.CoreCompileInputs.cache
+C:\Users\Bmarc\source\repos\PizzaStore3\PizzaStore.Client\obj\Debug\netcoreapp2.0\PizzaStore.Client.AssemblyInfoInputs.cache
+C:\Users\Bmarc\source\repos\PizzaStore3\PizzaStore.Client\obj\Debug\netcoreapp2.0\PizzaStore.Client.AssemblyInfo.cs
+C:\Users\Bmarc\source\repos\PizzaStore3\PizzaStore.Client\obj\Debug\netcoreapp2.0\PizzaStore.Client.dll
+C:\Users\Bmarc\source\repos\PizzaStore3\PizzaStore.Client\obj\Debug\netcoreapp2.0\PizzaStore.Client.pdb
