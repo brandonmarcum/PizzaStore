@@ -8,6 +8,16 @@ namespace PizzaStore.Library
 {
     public class SizeL
     {
+        public SizeL()
+        {
+
+        }
+
+        public SizeL(string n)
+        {
+
+        }
+
         public static int FindIndexOfSelected()
         {
             EFData ed = new EFData();

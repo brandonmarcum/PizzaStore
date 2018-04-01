@@ -14,13 +14,13 @@ namespace PizzaStore.Library
 
         public PizzaL()
         {
-            SizeL s = new SizeL();
-            CrustL c = new CrustL();
-            ToppingL t = new ToppingL();
+            //SizeL s = new SizeL();
+            //CrustL c = new CrustL();
+            //ToppingL t = new ToppingL();
 
-            Topping = t.FindSelectedTopping();
-            Size = s.FindSelectedSize();
-            Crust = c.FindSelectedCurst();
+            //Topping = t.FindSelectedTopping();
+            //Size = s.FindSelectedSize();
+            //Crust = c.FindSelectedCurst();
         }
     }
 }

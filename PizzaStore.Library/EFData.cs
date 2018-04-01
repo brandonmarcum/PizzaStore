@@ -34,21 +34,21 @@ namespace PizzaStore.Library
 
             Pizza pizza = new Pizza();
             pizza.PizzaId = ReadPizza().Count + 1;
-            pizza.Crust = pizzal.Crust;
-            pizza.Size = pizzal.Size;
+            //pizza.Crust = pizzal.Crust;
+            //pizza.Size = pizzal.Size;
 
 
             db.Pizzas.AddRange(pizza);
             
-            PizzaTopping pt = new PizzaTopping();
+            //PizzaTopping pt = new PizzaTopping();
 
             foreach(var item in ReadTopping())
             {
                 if(item.Selected)
                 {
-                    pt.Pizza = pizza.PizzaId;
-                    pt.Topping = item.ToppingId;
-                    db.PizzaToppings.AddRange(pt);
+                    //pt.Pizza = pizza.PizzaId;
+                    //pt.Topping = item.ToppingId;
+                    //db.PizzaToppings.AddRange(pt);
                 }
             }
             
