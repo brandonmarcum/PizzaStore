@@ -6,18 +6,14 @@ namespace PizzaStore.Data
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Cheese")]
-    public partial class Cheese
+    [Table("PizzaTopping")]
+    public partial class PizzaTopping
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int CheeseId { get; set; }
+        public int PizzaToppingId { get; set; }
 
-        [StringLength(100)]
-        public string Name { get; set; }
+        public int Pizza { get; set; }
 
-        [Column(TypeName = "money")]
-        public decimal Stock { get; set; }
-
-        public bool Selected { get; set; }
+        public int Topping { get; set; }
     }
 }

@@ -14,7 +14,13 @@ namespace PizzaStore.Data
         public DbSet<Pizza> Pizzas { get; set; }
         public DbSet<Size> Sizes { get; set; }
         public DbSet<Crust> Crusts { get; set; }
+        public DbSet<Cheese> Cheeses { get; set; }
+        public DbSet<Sauce> Sauces { get; set; }
         public DbSet<Topping> Toppings { get; set; }
+        public DbSet<PizzaTopping> PizzaToppings { get; set; }
+        public DbSet<Location> Locations { get; set; }
+        public DbSet<PizzaOrder> PizzaOrders { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
         public PizzaContext()
         {

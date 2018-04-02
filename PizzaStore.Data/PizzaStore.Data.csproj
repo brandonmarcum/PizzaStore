@@ -140,6 +140,7 @@
     <Compile Include="PizzaContext.cs" />
     <Compile Include="PizzaOrder.cs" />
     <Compile Include="PizzaStoreDB.cs" />
+    <Compile Include="PizzaTopping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sauce.cs" />
     <Compile Include="Size.cs" />

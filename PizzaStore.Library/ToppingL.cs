@@ -13,12 +13,7 @@ namespace PizzaStore.Library
             EFData ed = new EFData();
 
             int i = 0;
-
-            foreach (var item in ed.ReadSize())
-            {
-                if (item.Selected)
-                    i++;
-            }
+            
 
             return i;
         }
@@ -29,7 +24,7 @@ namespace PizzaStore.Library
             List<int> toppingIndexList = new List<int>();
             int i = 1;
 
-            foreach (var item in ed.ReadCrust())
+            foreach (var item in ed.ReadTopping())
             {
                 if (item.Selected)
                 {
@@ -39,6 +34,32 @@ namespace PizzaStore.Library
             }
 
             return toppingIndexList;
+        }
+
+        public int FindToppingByName(string itemName)
+        {
+            EFData ed = new EFData();
+
+            foreach (var item in ed.ReadTopping())
+            {
+                if (item.Name == itemName)
+                {
+                    item.Selected = true;
+                    return item.ToppingId;
+                }
+            }
+
+            throw new ArgumentNullException("No Topping Selected");
+        }
+
+        public void ClearSelected()
+        {
+            EFData ed = new EFData();
+
+            foreach (var item in ed.ReadTopping())
+            {
+                item.Selected = false;
+            }
         }
     }
 }

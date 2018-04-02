@@ -8,15 +8,6 @@ namespace PizzaStore.Library
 {
     public class SizeL
     {
-        public SizeL()
-        {
-
-        }
-
-        public SizeL(string n)
-        {
-
-        }
 
         public static int FindIndexOfSelected()
         {
@@ -32,13 +23,13 @@ namespace PizzaStore.Library
             throw new ArgumentNullException("Couldn't find record");
         }
 
-        public double GetSizeCost()
+        public double GetSizeCost(string itemName)
         {
             EFData ed = new EFData();
 
             foreach (var item in ed.ReadSize())
             {
-                if (item.Selected)
+                if (item.Name == itemName)
                     return double.Parse(item.Price.ToString());
             }
 
@@ -57,5 +48,34 @@ namespace PizzaStore.Library
 
             throw new ArgumentNullException("No Size Selected");
         }
+
+        public string FindSizeByName(string itemName)
+        {
+            EFData ed = new EFData();
+
+            foreach (var item in ed.ReadSize())
+            {
+                if (item.Name == itemName)
+                {
+                    item.Selected = true;
+                    return item.Name;
+                }
+            }
+
+            throw new ArgumentNullException("No Size Selected");
+        }
+
+        public void ClearSelected()
+        {
+            EFData ed = new EFData();
+
+            foreach (var item in ed.ReadSize())
+            {
+                    item.Selected = false;
+            }
+        }
+
+
+
     }
 }

@@ -123,10 +123,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheeseL.cs" />
     <Compile Include="CrustL.cs" />
     <Compile Include="EFData.cs" />
+    <Compile Include="LocationL.cs" />
+    <Compile Include="OrderL.cs" />
     <Compile Include="PizzaL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SauceL.cs" />
     <Compile Include="SizeL.cs" />
     <Compile Include="ToppingL.cs" />
   </ItemGroup>

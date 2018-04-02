@@ -20,5 +20,7 @@ namespace PizzaStore.Data
         public decimal Stock { get; set; }
 
         public bool Selected { get; set; }
+
+        public int Location { get; set; }
     }
 }

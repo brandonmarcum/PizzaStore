@@ -8,7 +8,7 @@ namespace PizzaStore.Data
     public partial class PizzaStoreDB : DbContext
     {
         public PizzaStoreDB()
-            : base("name=PizzaStoreDB1")
+            : base("name=PizzaStoreDB")
         {
         }
 
@@ -19,6 +19,7 @@ namespace PizzaStore.Data
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Pizza> Pizzas { get; set; }
         public virtual DbSet<PizzaOrder> PizzaOrders { get; set; }
+        public virtual DbSet<PizzaTopping> PizzaToppings { get; set; }
         public virtual DbSet<Sauce> Sauces { get; set; }
         public virtual DbSet<Size> Sizes { get; set; }
         public virtual DbSet<Topping> Toppings { get; set; }
@@ -55,6 +56,30 @@ namespace PizzaStore.Data
                 .HasPrecision(19, 4);
 
             modelBuilder.Entity<Order>()
+                .Property(e => e.Cost)
+                .HasPrecision(19, 4);
+
+            modelBuilder.Entity<Pizza>()
+                .Property(e => e.Crust)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Pizza>()
+                .Property(e => e.Size)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Pizza>()
+                .Property(e => e.Sauce)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Pizza>()
+                .Property(e => e.FirstCheese)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Pizza>()
+                .Property(e => e.SecondCheese)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Pizza>()
                 .Property(e => e.Cost)
                 .HasPrecision(19, 4);
 

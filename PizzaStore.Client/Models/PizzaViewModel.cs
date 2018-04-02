@@ -8,7 +8,7 @@ namespace PizzaStore.Client.Models
 {
     public class PizzaViewModel
     {
-
+        public string SubmitType { get; set; }
         public string Location { get; set; }
         public string Size { get; set; }
         public string Crust { get; set; }
@@ -16,6 +16,7 @@ namespace PizzaStore.Client.Models
         public string FirstCheese { get; set; }
         public string SecondCheese { get; set; }
         public Topping Toppings { get; set; }
+        public string CustomerLocation { get; set; }
 
         public PizzaViewModel()
         {

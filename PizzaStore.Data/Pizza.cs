@@ -12,10 +12,27 @@ namespace PizzaStore.Data
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int PizzaId { get; set; }
 
-        public int Crust { get; set; }
+        [Required]
+        [StringLength(100)]
+        public string Crust { get; set; }
 
-        public int Size { get; set; }
+        [Required]
+        [StringLength(100)]
+        public string Size { get; set; }
 
-        public int Sauce { get; set; }
+        [Required]
+        [StringLength(100)]
+        public string Sauce { get; set; }
+
+        [Required]
+        [StringLength(100)]
+        public string FirstCheese { get; set; }
+
+        [Required]
+        [StringLength(100)]
+        public string SecondCheese { get; set; }
+
+        [Column(TypeName = "money")]
+        public decimal Cost { get; set; }
     }
 }
