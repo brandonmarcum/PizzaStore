@@ -133,8 +133,10 @@
   <ItemGroup>
     <Compile Include="Cheese.cs" />
     <Compile Include="Crust.cs" />
+    <Compile Include="DatabaseLog.cs" />
     <Compile Include="ItemInventory.cs" />
     <Compile Include="Location.cs" />
+    <Compile Include="Model1.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Pizza.cs" />
     <Compile Include="PizzaContext.cs" />

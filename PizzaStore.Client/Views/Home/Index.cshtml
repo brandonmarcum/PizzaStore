@@ -11,6 +11,9 @@
 </header>
 <nav id="navigation" style="display:none;" class="smooth-scroll row jumbotron">
     <div class="col-md-6">
+
+
+
         <h1 id="title"><a href="#featuredpizzas"><img src="Images/FeaturedPizzas.png" alt="Featured Pizzas" style="width:100%;"></a></h1>
     </div>
     <div class="col-md-6">
@@ -37,6 +40,7 @@
                 <li data-target="#myCarousel" data-slide-to="1"></li>
                 <li data-target="#myCarousel" data-slide-to="2"></li>
                 <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
             </ol>
 
             <!-- Wrapper for slides -->
@@ -46,6 +50,14 @@
                     <div class="carousel-caption">
                         <h3>Cheese Pizza</h3>
                         <p>A Relic of the 90s. So simple, yet loved by billions</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="~/images/973094_a529d743.jpg" alt="Our Building" style="width:100%;"/>
+                    <div class="carousel-caption">
+                        <h3>Our Headquarters</h3>
+                        <p>The main branch for our company located in Greenville, Florida.</p>
                     </div>
                 </div>
 
@@ -97,18 +109,18 @@
 
         <div class="col-md-12">
             @using (Html.BeginForm(FormMethod.Post))
-    {
+            {
 
-        List<SelectListItem> sizeItems = new List<SelectListItem>();
-        sizeItems.Add(new SelectListItem { Text = "Kids ($7.50)", Value = "KidsPizza" });
-        sizeItems.Add(new SelectListItem { Text = "Small ($8.25)", Value = "SmallPizza" });
-        sizeItems.Add(new SelectListItem { Text = "Medium ($8.80)", Value = "MediumPizza" });
-        sizeItems.Add(new SelectListItem { Text = "Large ($9.15)", Value = "LargePizza" });
+                List<SelectListItem> sizeItems = new List<SelectListItem>();
+                sizeItems.Add(new SelectListItem { Text = "Kids ($7.50)", Value = "KidsPizza" });
+                sizeItems.Add(new SelectListItem { Text = "Small ($8.25)", Value = "SmallPizza" });
+                sizeItems.Add(new SelectListItem { Text = "Medium ($8.80)", Value = "MediumPizza" });
+                sizeItems.Add(new SelectListItem { Text = "Large ($9.15)", Value = "LargePizza" });
 
-        List<SelectListItem> crustItems = new List<SelectListItem>();
-        crustItems.Add(new SelectListItem { Text = "Thin (Free)", Value = "Thin" });
-        crustItems.Add(new SelectListItem { Text = "Thick ($0.75)", Value = "Thick" });
-        crustItems.Add(new SelectListItem { Text = "Extra Thick ($1.05)", Value = "Extra Thick" });
+                List<SelectListItem> crustItems = new List<SelectListItem>();
+                crustItems.Add(new SelectListItem { Text = "Thin (Free)", Value = "Thin" });
+                crustItems.Add(new SelectListItem { Text = "Thick ($0.75)", Value = "Thick" });
+                crustItems.Add(new SelectListItem { Text = "Extra Thick ($1.05)", Value = "Extra Thick" });
 
 
 
@@ -179,22 +191,23 @@ secondCheeseItems.Add(new SelectListItem { Text = "Purple Cheese", Value = "Purp
             <button type="submit" name="submitButton" value="pizza"><i class="fas fa-plus"></i> Add Pizza!</button>
         </div>
 
+        <hr />
+        
+            List<SelectListItem> personLocation = new List<SelectListItem>();
+            personLocation.Add(new SelectListItem { Text = "James Smith", Value = "James Smith" });
+            personLocation.Add(new SelectListItem { Text = "John Johnson", Value = "John Johnson" });
+            personLocation.Add(new SelectListItem { Text = "Robert Williams", Value = "Robert Williams" });
+            personLocation.Add(new SelectListItem { Text = "Micheal Jones", Value = "Micheal Jones" });
 
-List<SelectListItem> personLocation = new List<SelectListItem>();
-personLocation.Add(new SelectListItem { Text = "James Smith", Value = "James Smith" });
-personLocation.Add(new SelectListItem { Text = "John Johnson", Value = "John Johnson" });
-personLocation.Add(new SelectListItem { Text = "Robert Williams", Value = "Robert Williams" });
-personLocation.Add(new SelectListItem { Text = "Micheal Jones", Value = "Micheal Jones" });
+            List<SelectListItem> locationItems = new List<SelectListItem>();
+            locationItems.Add(new SelectListItem { Text = "Greenville, FL", Value = "Greenville" });
+            locationItems.Add(new SelectListItem { Text = "Washington, FL", Value = "Washington" });
+            locationItems.Add(new SelectListItem { Text = "Franklin, GA", Value = "Franklin" });
+            locationItems.Add(new SelectListItem { Text = "Springfield, TN", Value = "Springfield" });
 
-List<SelectListItem> locationItems = new List<SelectListItem>();
-locationItems.Add(new SelectListItem { Text = "Greenville, FL", Value = "Greenville" });
-locationItems.Add(new SelectListItem { Text = "Washington, FL", Value = "Washington" });
-locationItems.Add(new SelectListItem { Text = "Franklin, GA", Value = "Franklin" });
-locationItems.Add(new SelectListItem { Text = "Springfield, TN", Value = "Springfield" });
-
-
-        @using (Html.BeginForm(FormMethod.Post))
-{
+        <div id="account">
+            @using (Html.BeginForm(FormMethod.Post))
+    {
         <div class="col-md-6">
             <h4>Select an Account</h4>
             @Html.DropDownListFor(m => m.CustomerLocation, personLocation)
@@ -207,12 +220,14 @@ locationItems.Add(new SelectListItem { Text = "Springfield, TN", Value = "Spring
             <button type="submit" name="submitButton" value="order"><i class="fas fa-truck"></i> Deliver!</button>
         </div>
         <div class=" col-mid-9">
-            <button type="submit" name="submitButton" value ="history"><i class="fas fa-address-book"></i> History!</button>
+            <button type="submit" name="submitButton" value="history"><i class="fas fa-address-book"></i> History!</button>
         </div>
         <div class="col-mid-12">
             @ViewData["History"]
         </div>
 }
+        </div>
+
 }
 
 </section>

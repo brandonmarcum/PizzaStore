@@ -11,6 +11,7 @@
     <meta name="author" content="brandon marcum"> <!-- Who wrote the context of the page -->
     <meta name="keywords" content="dotnet, html, css, js"> <!-- Manipulates SEO somewhat -->
     <meta name="description" content="hello html">
+    <link rel="icon" href="Images/favicon.ico">
 
     <link rel="stylesheet" href="styles/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -40,7 +41,7 @@
     </environment>
 </head>
 <body>
-    
+
     <div class="container body-content">
 
         @RenderBody()
@@ -57,5 +58,28 @@
 
 
     @RenderSection("Scripts", required: false)
+
+
+
+
+    <script>
+        $(document).ready(function () {
+            $("a").on('click', function (event) {
+                
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    
+                    var hash = this.hash;
+                    
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+                        
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
