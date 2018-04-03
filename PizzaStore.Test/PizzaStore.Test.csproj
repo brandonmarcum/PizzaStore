@@ -134,11 +134,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="PizzaStoreTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PizzaStore.Client\PizzaStore.Client.csproj">
+      <Project>{1bee5dd3-45c6-462f-bc8f-17ba8c53c77c}</Project>
+      <Name>PizzaStore.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PizzaStore.Data\PizzaStore.Data.csproj">
+      <Project>{29e3db8e-6b2f-47e1-ba68-43f2f8ee7ce9}</Project>
+      <Name>PizzaStore.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PizzaStore.Library\PizzaStore.Library.csproj">
+      <Project>{33a9fa8f-13a7-465c-bf75-79eebb367c21}</Project>
+      <Name>PizzaStore.Library</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
