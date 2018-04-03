@@ -83,8 +83,7 @@ namespace PizzaStore.Client.Controllers
 
         public void AddPizza(PizzaViewModel pvm)
         {
-            PizzaL pizza = new PizzaL(pvm.Crust, pvm.Size, pvm.Sauce, pvm.FirstCheese, pvm.SecondCheese);
-            //Handle toppings sepeartely
+            
             List<string> toppingList = new List<string>();
             if(pvm.Toppings != null)
             {
@@ -105,6 +104,9 @@ namespace PizzaStore.Client.Controllers
 
                 if (toppingList.Count > 3)
                     throw new Exception("Only up to three toppings, please");
+
+                PizzaL pizza = new PizzaL(pvm.Crust, pvm.Size, pvm.Sauce, pvm.FirstCheese, pvm.SecondCheese);
+                //Handle toppings sepeartely
 
                 pizza.FillToppingTable(toppingList);
             }
